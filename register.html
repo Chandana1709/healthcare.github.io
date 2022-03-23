@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registration form</title>
+	<script src="https://use.fontawesome.com/a8cc2bc622.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+	<meta charset="utf-8">
+	
+	<style>
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	font-size:80%;
+	background-image: url('myimage..svg');
+	font-family:'Montserrat', sans-serif;
+	background-size:cover;
+	background-repeat: no-repeat;
+
+}
+
+.header{
+	 width:26.5%;
+	 margin:45px auto 0px;
+	 color:white;
+	 background:orange;
+	 text-align:center;
+	 border:1px solid #B0C4DE;
+	 border-bottom:none;
+	 border-radius:10px 10px 0px 0px;
+	 padding:10px;
+	 font-size:16px;
+}
+form, .content{
+	width:25%;
+	margin:0px auto;
+	padding:20px;
+	border:1px solid #80C4DE;
+	background:white;
+	border-radius:0px 0px 10px 10px;
+}
+.input-group{
+	margin:10px 0px 10px 0px;
+}
+.input-group label{
+	display:block;
+	text-align:left;
+	margin:3px;
+	font-size:16px;
+}
+.input-group input{
+	height:30px;
+	width:90%;
+	padding:5px 10px;
+	font-size:16px;
+	border-radius:5px;
+	border:1px solid gray;
+}
+
+
+
+
+
+.button1{
+	padding:15px 30px;
+	font-size:15px;
+	color:white;
+	background:orange;
+	border:none;
+	border-radius:4px;
+	text-decoration:none;
+	display:inline block;
+	margin:3px 1px;
+	transition-duration:0.4s;
+}
+
+
+}
+
+.success{
+	color:#3C763D;
+	background:#dff0d8;
+	border:1px solid #3c763d;
+	margin-bottom:20px;
+}
+.radio{
+	display:inline-block;
+	align-items:center;
+	cursor:pointer;
+	margin-right:15px;
+	font-size:24px;
+	font-weight:500;
+	text-transform:capitalize;
+	color:#fff;
+	position:relative;
+	padding-left:30px;
+	cursor:pointer;
+}
+
+
+}
+.radio + .radio {
+	margin-left:20px;
+}
+.radio input[type="radio"]{
+	display none;
+}
+.radio span{
+	height:20px;
+	width:20px;
+	border-radius:50%;
+	border:3px solid #00aeef;
+	display:block;
+    position:absolute;
+    left:0;
+    top:7px;
+}
+.radio span:after{
+	content:"";
+	height:8px;
+	width:8px;
+	background:#5F9EA0;
+	display:block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%) scale(0);
+	border-radius:50%;
+	transition:300ms ease-in-out 0s;
+}
+.radio input[type="radio"]:checked ~ span:after{
+	transform:translate(-50%,-50%) scale(1);
+}
+.link{
+	font-size:18px;
+}
+.logo{
+	
+  color:#069370;
+  height:55px;
+  font-size:35px;
+  line-height:60px;
+  padding:0 20px;
+  font-style:oblique;
+  text-align:center;
+  box-sizing:border-box;
+  font-weight:800;
+  float:left;
+  text-decoration:none;
+}
+}
+
+</style>
+</head>
+<script>
+       function checkpassword(form){
+	   password = form.password.value;
+	   confirmpassword = form.confirmpassword.value;
+	   if(password != confirmpassword){
+	   alert("Passwords did not match!\nPlease enter same password in both the fields.")
+	   return false;
+	   }
+	   else{
+	   return true;
+	   }
+	}
+</script>
+<body>
+	
+		<div class="header">
+		<h2>Register</h2>
+	   </div>
+      
+		    <form action="register.php" method="POST" style="text_align:centre;">
+			<div class ="input-group">
+				<label><b>User ID</b></label>
+				
+				<input type ="text" name="userid" id="userid" pattern="[A-Za-z0-9]{6}" title="Can contain letters and numbers which is of 6 characters" placeholder = "userid" required>
+			</div>
+
+		    <div class ="input-group">
+		    	<label><b>Password</b></label>
+		    				   <input type="password" name="password" id="password" placeholder="password" pattern="(?=.*\d)(?=.*[A-Z]).{6,}" title="Must contain atleast one number and one uppercase letter and have atleast 6 or more characters" required>
+							   </div>
+
+           <div class ="input-group">
+            	<label><b>Confirm Password</b></label>
+		    	
+			   <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm password" required>	
+            </div>
+
+	<div class ="input-group">
+		         <label><b>User Name</b></label>
+				
+				<input type ="text" name="username" id="username" placeholder = "Enter your Username" required>
+			</div>
+
+
+
+<div class ="radio-group">
+				 
+     	<label><b>Gender</b></label><br>
+              <input type="radio" name="gender" id="gender" value="male">
+              <b>Male</b>
+              <span></span>
+          </label>
+          <label>
+              <input type="radio" name="gender" id="gender" value="female">
+               <b>Female</b>
+              <span></span>
+           </label>
+           <label>
+              <input type="radio" name="gender" id="gender" value="other">
+              <b>Other</b>
+              
+              <span></span><br>
+
+              </label>
+          </div>
+
+
+
+<div class ="input-group">
+				<label><b>Height</b></label>
+				<input type ="text" name="height" id="height" placeholder = "Enter your height(feet)" required>
+			</div>
+
+
+<div class ="input-group">
+				<label><b>Weight</b></label>
+				<input type ="text" name="weight" id="weight" placeholder = "Enter your Weight" required>
+			</div>
+
+
+<div class ="input-group">
+	         <label><b>Select Blood Group</b></label> 			
+			<br><select name="blood_group" id="blood_group">
+				<option>Choose blood group</option>
+				
+				<option value="A+">A+</option>
+				<option value="O+">O+</option>
+				<option value="B+">B+</option>
+				<option value="AB+">AB+</option>
+				<option value="A-">A-</option>
+				<option value="O-">O-</option>
+				<option value="B-">B-</option>
+				<option value="AB-">AB-</option>
+                </select><br><br>
+                
+            </div>
+
+				<div class ="input-group">
+				<label><b>Age</b></label>
+				<input type ="text" name="age" id="age" placeholder = "Enter your Age" required>
+			</div>
+
+
+
+<div class ="input-group">
+				<label><b>Date of birth</b></label>
+				<input type ="date" name="dob" id="dob" placeholder = "dd/mm/yy" required>
+			</div>
+<div class ="input-group">
+				<label><b>Security Question</b></label>
+				<input type ="text" name="security_qstn" id="security_qstn" placeholder = "Your favourite palce of vacation?" required>
+			</div>
+
+		<input class="button1" type="submit" value="Register" onclick="return checkpassword(form)"><br>
+              
+          <div class="link">    
+         <p><b>Already have an account??<a href="login.html">Login</a></b></p>
+        </div>
+    </form>
+
+	 <script>
+          $(window).on("load",function(){
+              $(".loader-container").fadeOut(1000);
+          });
+        </script>
+</body>
+</html>
